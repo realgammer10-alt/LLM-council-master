@@ -1,0 +1,80 @@
+.monitoring-panel {
+  padding: 14px 16px;
+  border-top: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.monitoring-panel h2 {
+  margin: 0 0 10px;
+  color: #555;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.monitoring-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 8px;
+  align-items: center;
+  margin-top: 9px;
+  color: #555;
+  font-size: 12px;
+}
+
+.monitoring-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+}
+
+.monitoring-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #999;
+}
+
+.monitoring-status-healthy .monitoring-status-dot {
+  background: #2e9b57;
+}
+
+.monitoring-status-running .monitoring-status-dot {
+  background: #4a90e2;
+  animation: monitoring-pulse 1.2s ease-in-out infinite;
+}
+
+.monitoring-status-degraded .monitoring-status-dot,
+.monitoring-status-not_configured .monitoring-status-dot,
+.monitoring-status-error .monitoring-status-dot,
+.monitoring-status-unhealthy .monitoring-status-dot,
+.monitoring-status-unavailable .monitoring-status-dot {
+  background: #d47b27;
+}
+
+.monitoring-latency {
+  grid-column: 2;
+  color: #777;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.monitoring-detail {
+  grid-column: 1 / -1;
+  color: #888;
+  overflow-wrap: anywhere;
+}
+
+.monitoring-updated {
+  margin-top: 10px;
+  color: #999;
+  font-size: 11px;
+}
+
+@keyframes monitoring-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
